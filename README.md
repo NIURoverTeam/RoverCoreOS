@@ -1,4 +1,4 @@
-# Rover OS 2.0 Developer's Guide
+# Rover 2.0 OS Developer's Guide
 ## Getting Started
 ### Setting up ROS
 Rover 2.0 runs on the open source [Robotic Operating System](https://www.ros.org), specifically Lunar Loggerhead. To start developing with ROS, you'll need access to a Linux distro, preferably Ubuntu. as we run Ubuntu on the rover itself.

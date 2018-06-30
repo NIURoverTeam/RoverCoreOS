@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>picus_martius_core_os</name>
+  <name>rover_core_os</name>
   <version>0.0.0</version>
-  <description>Core control functionality for the Picus Martius Rover.</description>
+  <description>Core control functionality for NIU's Rover 2.0.</description>
   <maintainer email="ryandlewis.rl@gmail.com">Ryan D. Lewis</maintainer>
   <license>BSD</license>
   <url type="website">https://www.facebook.com/NIURover/</url>
