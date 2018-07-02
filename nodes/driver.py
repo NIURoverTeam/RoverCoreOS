@@ -4,6 +4,7 @@ from std_msgs.msg import String
 roslib.load_manifest('rover_core_os')
 
 import rospy
+import tf
 
 if __name__ == '__main__':
     logger = rospy.Publisher('logger', String, queue_size=10)
