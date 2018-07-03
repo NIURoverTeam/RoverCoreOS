@@ -26,6 +26,11 @@
   <exec_depend>std_msgs</exec_depend>
   <build_depend>message_generation</build_depend>
   <exec_depend>message_runtime</exec_depend>
+  <build_depend>roslaunch</build_depend>
+  <build_depend>joint_state_publisher</build_depend>
+  <build_depend>robot_state_publisher</build_depend>
+  <build_depend>rviz</build_depend>
+  <build_depend>xacro</build_depend>
   <export>
   </export>
 </package>
