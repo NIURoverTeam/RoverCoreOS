@@ -16,6 +16,10 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   move_base
   sensor_msgs
+  rviz
+  urdf
+  robot_state_publisher
+  joint_state_publisher
 )
 
 ## System dependencies are found with CMake's conventions

@@ -6,7 +6,6 @@
   <maintainer email="ryandlewis.rl@gmail.com">Ryan D. Lewis</maintainer>
   <license>BSD</license>
   <url type="website">https://www.facebook.com/NIURover/</url>
-  <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roscpp</build_depend>
   <build_depend>rospy</build_depend>
   <build_depend>std_msgs</build_depend>
@@ -14,6 +13,14 @@
   <build_depend>geometry_msgs</build_depend>
   <build_depend>sensor_msgs</build_depend>
   <build_depend>move_base</build_depend>
+  <build_depend>message_generation</build_depend>
+  <build_depend>roslaunch</build_depend>
+  <build_depend>joint_state_publisher</build_depend>
+  <build_depend>robot_state_publisher</build_depend>
+  <build_depend>rviz</build_depend>
+  <build_depend>xacro</build_depend>
+  <build_depend>urdf</build_depend>
+
   <build_export_depend>geometry_msgs</build_export_depend>
   <build_export_depend>sensor_msgs</build_export_depend>
   <build_export_depend>move_base</build_export_depend>
@@ -21,16 +28,24 @@
   <build_export_depend>roscpp</build_export_depend>
   <build_export_depend>rospy</build_export_depend>
   <build_export_depend>std_msgs</build_export_depend>
+  <build_export_depend>rviz</build_export_depend>
+  <build_export_depend>urdf</build_export_depend>
+  <build_export_depend>joint_state_publisher</build_export_depend>
+  <build_export_depend>robot_state_publisher</build_export_depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
   <exec_depend>roscpp</exec_depend>
   <exec_depend>rospy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
-  <build_depend>message_generation</build_depend>
   <exec_depend>message_runtime</exec_depend>
-  <build_depend>roslaunch</build_depend>
-  <build_depend>joint_state_publisher</build_depend>
-  <build_depend>robot_state_publisher</build_depend>
-  <build_depend>rviz</build_depend>
-  <build_depend>xacro</build_depend>
+  <exec_depend>tf</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>urdf</exec_depend>
+  <exec_depend>urdf_parse</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
   <export>
   </export>
 </package>
