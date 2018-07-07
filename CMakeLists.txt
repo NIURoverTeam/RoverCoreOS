@@ -20,6 +20,8 @@ find_package(catkin REQUIRED COMPONENTS
   urdf
   robot_state_publisher
   joint_state_publisher
+  nav_msgs
+  robot_localization
 )
 
 ## System dependencies are found with CMake's conventions
