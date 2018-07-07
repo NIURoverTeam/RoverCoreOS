@@ -23,6 +23,8 @@ The best way to learn ROS is to jump into the [extensive tutorials](http://wiki.
 
 You can grab the source code from this repository using git. Make sure you clone it into your catkin workspace's `src` directory (if you setup everything according to the ROS tutorial, probably `~/catkin_ws/src`). Once that's done, you should be able to run `catkin_make` in the catkin catkin workspace root directory to build the neccessary code and dependencies. You'll likely have to install a slew of dependencies using apt-get first before you'll get a successful build.
 
+You'll probably also have to run through [this install](https://google-cartographer-ros.readthedocs.io/en/latest/index.html)
+
 ### Running
 You can get Rover 2.0 up and running using `roslaunch`
 
