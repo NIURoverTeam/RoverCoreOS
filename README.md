@@ -16,3 +16,14 @@ If you choose to use a virtual machine, you can try running NIU Rover's prebuilt
 
 ### Learning ROS
 The best way to learn ROS is to jump into the [extensive tutorials](http://wiki.ros.org/ROS/Tutorials) on the organizations main wiki page. I'd recommend at least going through the beginner tutorials to get a basic understanding of how ROS works before looking into Rover 2.0's code. Your path after that largely depends on which part of the code you want to work on first.
+
+## Installing and Running Rover 2.0 OS
+
+### Downloading & Installing
+
+You can grab the source code from this repository using git. Make sure you clone it into your catkin workspace's `src` directory (if you setup everything according to the ROS tutorial, probably `~/catkin_ws/src`). Once that's done, you should be able to run `catkin_make` in the catkin catkin workspace root directory to build the neccessary code and dependencies. You'll likely have to install a slew of dependencies using apt-get first before you'll get a successful build.
+
+### Running
+You can get Rover 2.0 up and running using `roslaunch`
+
+First, run `roscore` in a separate terminal. To run the URDF visualization of the rover, run `roslaunch rover_core_os display_model.launch`. To start the rover itself, run `roslaunch rover_core_os start_rover.launch`.
