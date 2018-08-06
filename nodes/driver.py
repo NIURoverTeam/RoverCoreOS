@@ -8,7 +8,7 @@ import rospy
 import tf
 
 def drive(data):
-    rospy.loginfo(data)
+    rospy.loginfo("Recieved!")
 
 if __name__ == '__main__':
     # Start the driver node
