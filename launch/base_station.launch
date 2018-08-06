@@ -1,0 +1,7 @@
+<launch>
+  <arg name="jsX" default="0"/>
+
+  <param name="joynode/dev" command="rosparam set joynode/dev /dev/input/js$(arg jsX)"/>
+
+  <node name="joystick_controller" pkg="joy" type="joy_node"/>
+</launch>
