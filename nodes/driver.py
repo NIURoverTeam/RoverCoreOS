@@ -57,7 +57,6 @@ def controller_input(data):
     if autonomous == False and (axes[0] != 0 or axes[1] != 0):
         create_twist(axes[0], axes[1])
 
-
 if __name__ == '__main__':
     #Prep all the topics we want to publish/subscribe to
     logger = rospy.Publisher('logger', String, queue_size=10)
