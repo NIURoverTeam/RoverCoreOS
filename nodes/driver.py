@@ -33,16 +33,16 @@ def controller_input(data):
     # 9     Left Stick Click
     # 10    Right Stick Click
     axes = data.axes # Arrary of float32, each from -1.0 to 1.0
-    # 0     Left/Right Axis stick left
-    # 1     Up/Down Axis stick left
-    # 2     Left/Right Axis stick right
-    # 3     Up/Down Axis stick right
-    # 4     RT
-    # 5     LT
-    # 6     cross key left/right
-    # 7     cross key up/down
+    # 0     Left Thumbstick : 1:Left, -1:Right
+    # 1     Left Thumbstick : 1:Up, -1:Down
+    # 2     Left Trigger : -1:Pressed, 1:Released
+    # 3     Right Thumbstick : 1:Left, -1:Right
+    # 4     Right Thumbstick : 1:Up, -1:Down
+    # 5     Right Trigger : -1:Pressed, 1:Released
+    # 6     D-PAD : 1:Left, -1:Right
+    # 7     D-PAD : 1:Up, -1:Down
 
-    if axes[2] > 0.00:
+    if axes[2] < 0.00:
         logger.publish("Left Trigger")
 
 
