@@ -1,7 +1,8 @@
 <launch>
   <arg name="jsX" default="0"/>
 
-  <param name="joynode/dev" command="rosparam set joynode/dev /dev/input/js$(arg jsX)"/>
+  <param name="joynode/dev" value="/dev/input/js$(arg jsX)"/>
 
   <node name="joystick_controller" pkg="joy" type="joy_node"/>
+  <node name="base_station" pkg="rover_core_os" type="base_station.py"/>
 </launch>
