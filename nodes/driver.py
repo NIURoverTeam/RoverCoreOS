@@ -10,9 +10,21 @@ roslib.load_manifest('rover_core_os')
 # Global variables go here
 autonomous = False
 
+# Function called when Twist messages are published
 def navigation(data):
     logger.publish("Recieved!")
 
+# Function to publish Twist messages to direct the Rover's movement
+def create_twist(horizontal, vertical):
+    twist = Twist()
+    # Assign forward velocity based on up/down of thumbstick
+    twist.linear.x = vertical
+    # Rotate using tankdrive based on left/right of thumbstick
+    twist.angular.z = horizontal
+    twister.publish(twist)
+
+# Triggers when a Joy message is published
+# and decides what to do with the input
 def controller_input(data):
     # Check if the back button has been pressed, and if it has, shutdown
     if data.buttons[6] == 1:
@@ -42,13 +54,14 @@ def controller_input(data):
     # 6     D-PAD : 1:Left, -1:Right
     # 7     D-PAD : 1:Up, -1:Down
 
-    if axes[2] < 0.00:
-        logger.publish("Left Trigger")
+    if autonomous == False and (axes[0] != 0 or axes[1] != 0):
+        create_twist(axes[0], axes[1])
 
 
 if __name__ == '__main__':
     #Prep all the topics we want to publish/subscribe to
     logger = rospy.Publisher('logger', String, queue_size=10)
+    twister = rospy.Publisher('cmd_vel', Twist, queue_size=10)
 
     rospy.Subscriber("cmd_vel", Twist, navigation)
     rospy.Subscriber("joy", Joy, controller_input)
