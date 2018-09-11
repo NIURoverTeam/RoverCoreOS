@@ -21,7 +21,11 @@ The best way to learn ROS is to jump into the [extensive tutorials](http://wiki.
 
 ### Downloading & Installing
 
-You can grab the source code from this repository using git. Make sure you clone it into your catkin workspace's `src` directory (if you setup everything according to the ROS tutorial, probably `~/catkin_ws/src`). Once that's done, you should be able to run `catkin_make` in the catkin workspace root directory to build the neccessary code and dependencies. You'll likely have to install a slew of dependencies using apt-get first before you'll get a successful build.
+You can grab the source code from this repository using git. Make sure you clone it into your catkin workspace's `src` directory (if you setup everything according to the ROS tutorial, probably `~/catkin_ws/src`). Any development should be done on a branch distinct from `master` with working code being merged in via pull requests. 
+
+Next, you can run the dependency install script in the `scripts` directory.
+
+Once that's done, you should be able to run `catkin_make` in the catkin workspace root directory to build the neccessary code and dependencies.
 
 You'll probably also have to install [Google Cartographer](https://google-cartographer-ros.readthedocs.io/en/latest/index.html) and [Intel's Real Sense package](http://wiki.ros.org/RealSense)
 
