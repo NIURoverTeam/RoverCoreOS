@@ -6,6 +6,7 @@ Rover 2.0 runs on the open source [Robotic Operating System](https://www.ros.org
 You have 2 options here:
 1. Install Ubuntu's Xenial Distro (16.04.3) on a laptop or desktop
 2. Use a Virtual Machine
+3. Install Windows Subsystem for Linux (Windows only)
 
 If you choose to use a virtual machine, you can try running NIU Rover's prebuilt VM with ROS already installed, or you can create your own. The prebuilt is intended for VMWare Player 12+ running on a windows machine.
 
