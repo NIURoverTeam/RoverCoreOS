@@ -1,7 +1,7 @@
 # Rover 2.0 OS Developer's Guide
 ## Getting Started
 ### Setting up ROS
-Rover 2.0 runs on the open source [Robotic Operating System](https://www.ros.org), specifically Lunar Loggerhead. To start developing with ROS, you'll need access to a Linux distro, preferably Ubuntu. as we run Ubuntu on the rover itself.
+Rover 2.0 runs on the open source [Robotic Operating System](https://www.ros.org), specifically Lunar Loggerhead. To start developing with ROS, you'll need access to a Linux distro (preferably Ubuntu, as we run Ubuntu on the rover itself).
 
 You have 2 options here:
 1. Install Ubuntu's Xenial Distro (16.04.3) on a laptop or desktop
@@ -20,13 +20,23 @@ The best way to learn ROS is to jump into the [extensive tutorials](http://wiki.
 
 ## Installing and Running Rover 2.0 OS
 
+### Setting up the TX2
+You can follow [this](https://github.com/NVIDIA-Jetson/jetson-trashformers/wiki/Jetson%E2%84%A2-Flashing-and-Setup-Guide-for-a-Connect-Tech-Carrier-Board) guide to install or reinstall linux on the Nvidia TX2 board. Note: The Orbitty Carrier we're using requires additional steps before you flash the OS: if ignored, the TX2 won't have things like a working USB port.
+
 ### Downloading & Installing
 
-You can grab the source code from this repository using git. Make sure you clone it into your catkin workspace's `src` directory (if you setup everything according to the ROS tutorial, probably `~/catkin_ws/src`). Once that's done, you should be able to run `catkin_make` in the catkin catkin workspace root directory to build the neccessary code and dependencies. You'll likely have to install a slew of dependencies using apt-get first before you'll get a successful build.
+You can grab the source code from this repository using git. Make sure you clone it into your catkin workspace's `src` directory (if you setup everything according to the ROS tutorial, probably `~/catkin_ws/src`). Any development should be done on a branch distinct from `master` with working code being merged in via pull requests. 
 
-You'll probably also have to run through [this install](https://google-cartographer-ros.readthedocs.io/en/latest/index.html)
+Next, you can run the dependency install script in the `scripts` directory.
+
+Once that's done, you should be able to run `catkin_make` in the catkin workspace root directory to build the neccessary code and dependencies.
+
+You'll probably also have to install [Google Cartographer](https://google-cartographer-ros.readthedocs.io/en/latest/index.html) and [Intel's Real Sense package](http://wiki.ros.org/RealSense)
 
 ### Running
 You can get Rover 2.0 up and running using `roslaunch`
 
-First, run `roscore` in a separate terminal. To run the URDF visualization of the rover, run `roslaunch rover_core_os display_model.launch`. To start the rover itself, run `roslaunch rover_core_os start_rover.launch`.
+First, run `roscore` in a separate terminal. Next run one of the following:
+* `roslaunch rover_core_os display_model.launch`
+* `roslaunch rover_core_os start_rover.launch`
+* `roslaunch rover_core_os base_station.launch`
