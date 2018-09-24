@@ -19,6 +19,9 @@ The best way to learn ROS is to jump into the [extensive tutorials](http://wiki.
 
 ## Installing and Running Rover 2.0 OS
 
+### Setting up the TX2
+You can follow [this](https://github.com/NVIDIA-Jetson/jetson-trashformers/wiki/Jetson%E2%84%A2-Flashing-and-Setup-Guide-for-a-Connect-Tech-Carrier-Board) guide to install or reinstall linux on the Nvidia TX2 board. Note: The Orbitty Carrier we're using requires additional steps before you flash the OS: if ignored, the TX2 won't have things like a working USB port.
+
 ### Downloading & Installing
 
 You can grab the source code from this repository using git. Make sure you clone it into your catkin workspace's `src` directory (if you setup everything according to the ROS tutorial, probably `~/catkin_ws/src`). Any development should be done on a branch distinct from `master` with working code being merged in via pull requests. 
