@@ -18,12 +18,15 @@ If you choose to use a virtual machine, you can try running NIU Rover's prebuilt
 ### Learning ROS
 The best way to learn ROS is to jump into the [extensive tutorials](http://wiki.ros.org/ROS/Tutorials) on the organizations main wiki page. I'd recommend at least going through the beginner tutorials to get a basic understanding of how ROS works before looking into Rover 2.0's code. Your path after that largely depends on which part of the code you want to work on first.
 
-## Installing and Running Rover 2.0 OS
+## Getting the Rover Up and Running
 
 ### Setting up the TX2
 You can follow [this](https://github.com/NVIDIA-Jetson/jetson-trashformers/wiki/Jetson%E2%84%A2-Flashing-and-Setup-Guide-for-a-Connect-Tech-Carrier-Board) guide to install or reinstall linux on the Nvidia TX2 board. Note: The Orbitty Carrier we're using requires additional steps before you flash the OS: if ignored, the TX2 won't have things like a working USB port.
 
-### Downloading & Installing
+### Setup the RealSense Camera
+With a freshly imaged TX2, you'll need to install drivers for Intel's RealSense camera. I'd start by trying to run [this](https://github.com/syedharoonalam/installLibrealsenseTX2) install script, but there's no guarantees it'll work. If it doesn't, you might have to search around for updated RealSense D345 install instructions, as these seem to break often for the TX2.
+
+### Downloading & Installing Rover Core OS
 
 You can grab the source code from this repository using git. Make sure you clone it into your catkin workspace's `src` directory (if you setup everything according to the ROS tutorial, probably `~/catkin_ws/src`). Any development should be done on a branch distinct from `master` with working code being merged in via pull requests. 
 
