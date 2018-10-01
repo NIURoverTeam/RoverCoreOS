@@ -48,7 +48,6 @@
   <exec_depend>tf</exec_depend>
   <exec_depend>rviz</exec_depend>
   <exec_depend>urdf</exec_depend>
-  <exec_depend>urdf_parse</exec_depend>
   <exec_depend>xacro</exec_depend>
   <exec_depend>joint_state_publisher</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
