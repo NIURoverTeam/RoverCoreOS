@@ -26,7 +26,7 @@ You can follow [this](https://github.com/NVIDIA-Jetson/jetson-trashformers/wiki/
 Once the TX2 is up and running, edit the `/etc/apt/sources.list` file and replace `deb http://archive.ubuntu.com/ubuntu trusty universe main` with `deb [arch=amd64,i386] http://archive.ubuntu.com/ubuntu trusty universe main`.
 
 ### Setup the RealSense Camera
-With a freshly imaged TX2, you'll need to install drivers for Intel's RealSense camera. I'd start by trying to run [this](https://github.com/syedharoonalam/installLibrealsenseTX2) install script, but there's no guarantees it'll work. If it doesn't, you might have to search around for updated RealSense D345 install instructions, as these seem to break often for the TX2.
+With a freshly imaged TX2, you'll need to install drivers for Intel's RealSense camera. I'd start by trying to run [this](https://github.com/syedharoonalam/installLibrealsenseTX2) install script, and [this](https://github.com/jetsonhacks/installRealSense2ROSTX) other install script, but there's no guarantees it'll work. If it doesn't, you might have to search around for updated RealSense D345 install instructions, as these seem to break often for the TX2.
 
 ### Downloading & Installing Rover Core OS
 
