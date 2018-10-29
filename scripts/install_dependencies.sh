@@ -7,6 +7,7 @@ sudo apt-get install cmake-curses-gui -y
 sudo apt-get install build-essential libgtk-3-dev -y
 sudo apt-get install libssl-dev -y
 sudo apt-get install -y python-wstool python-rosdep ninja-build
+sudo apt-get install git-core -y
 
 ################ Cartographer Install ################
 
@@ -60,4 +61,20 @@ cd realsense
 git checkout 2.0.3
 cd ../..
 sudo rosdep -y install --from-paths src --ignore-src
-catkin_make_isolated --pkg realsense2_camera
+catkin_make_isolated --install --pkg realsense2_camera
+
+
+################ Phidgets Spatial ROS Install ################
+cd ~/catkin_ws/src
+git clone -b lunar https://github.com/ros-drivers/phidgets_drivers.git
+sudo apt-get install libusb-1.0-0 libusb-1.0-0-dev
+cd ..
+rosdep install --from-paths src --ignore-src -r -y
+catkin_make_isolated --install --pkg libphidget21 phidgets_api phidgets_drivers phidgets_high_speed_encoder phidgets_ik phidgets_imu
+
+cd ~/catkin_ws/src
+git clone https://github.com/ccny-ros-pkg/imu_tools.git
+cd ..
+rosdep install --from-paths src --ignore-src -r -y
+catkin_make_isolated --install --pkg imu_complementary_filter imu_filter_madgwick imu_tools
+
