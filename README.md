@@ -25,18 +25,13 @@ You can follow [this](https://github.com/NVIDIA-Jetson/jetson-trashformers/wiki/
 
 Once the TX2 is up and running, edit the `/etc/apt/sources.list` file and replace `deb http://archive.ubuntu.com/ubuntu trusty universe main` with `deb [arch=amd64,i386] http://archive.ubuntu.com/ubuntu trusty universe main`.
 
-### Setup the RealSense Camera
-With a freshly imaged TX2, you'll need to install drivers for Intel's RealSense camera. We have a script repository [here](https://www.github.com/NIURoverTeam/installlibrealsenseTX2) to do just that, so give it a shot.
-
 ### Downloading & Installing Rover Core OS
 
 You can grab the source code from this repository using git. Make sure you clone it into your catkin workspace's `src` directory (if you setup everything according to the ROS tutorial, probably `~/catkin_ws/src`). Any development should be done on a branch distinct from `master` with working code being merged in via pull requests. 
 
 Next, you can run the dependency install script in the `scripts` directory.
 
-Once that's done, you should be able to run `catkin_make` in the catkin workspace root directory to build the neccessary code and dependencies.
-
-You'll probably also have to install [Google Cartographer](https://google-cartographer-ros.readthedocs.io/en/latest/index.html) and [Intel's Real Sense package](http://wiki.ros.org/RealSense)
+Once that's done, you should be able to run `catkin_make_isolated --pkg rover_core_os` in the catkin workspace root directory to build the neccessary code and dependencies.
 
 ### Running
 You can get Rover 2.0 up and running using `roslaunch`
