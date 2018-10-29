@@ -23,8 +23,10 @@ The best way to learn ROS is to jump into the [extensive tutorials](http://wiki.
 ### Setting up the TX2
 You can follow [this](https://github.com/NVIDIA-Jetson/jetson-trashformers/wiki/Jetson%E2%84%A2-Flashing-and-Setup-Guide-for-a-Connect-Tech-Carrier-Board) guide to install or reinstall linux on the Nvidia TX2 board. Note: The Orbitty Carrier we're using requires additional steps before you flash the OS: if ignored, the TX2 won't have things like a working USB port.
 
+Once the TX2 is up and running, edit the `/etc/apt/sources.list` file and replace `deb http://archive.ubuntu.com/ubuntu trusty universe main` with `deb [arch=amd64,i386] http://archive.ubuntu.com/ubuntu trusty universe main`.
+
 ### Setup the RealSense Camera
-With a freshly imaged TX2, you'll need to install drivers for Intel's RealSense camera. I'd start by trying to run [this](https://github.com/syedharoonalam/installLibrealsenseTX2) install script, but there's no guarantees it'll work. If it doesn't, you might have to search around for updated RealSense D345 install instructions, as these seem to break often for the TX2.
+With a freshly imaged TX2, you'll need to install drivers for Intel's RealSense camera. We have a script repository [here](https://www.github.com/NIURoverTeam/installlibrealsenseTX2) to do just that, so give it a shot.
 
 ### Downloading & Installing Rover Core OS
 
