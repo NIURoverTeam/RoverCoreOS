@@ -1,16 +1,8 @@
 # Install dependency packages for building
 sudo apt-get update
-sudo apt-get install libusb-1.0-0-dev pkg-config -y
-sudo apt-get install libglfw3-dev -y
-sudo apt-get install qtcreator -y
-sudo apt-get install cmake-curses-gui -y
-sudo apt-get install build-essential libgtk-3-dev -y
-sudo apt-get install libssl-dev -y
-sudo apt-get install -y python-wstool python-rosdep ninja-build
-sudo apt-get install git-core -y
+sudo apt-get install -y libusb-1.0-0-dev pkg-config libglfw3-dev qtcreator cmake-curses-gui build-essential libgtk-3-dev libssl-dev python-wstool python-rosdep ninja-build git-core libusb-1.0-0 libusb-1.0-0-dev
 
 ################ Cartographer Install ################
-
 cd ~/catkin_ws
 wstool init src
 
@@ -29,9 +21,7 @@ rosdep update
 rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
 
 # Build and install.
-catkin_make_isolated --install --use-ninja --pkg ceres-solver cartographer cartographer_ros
-source install_isolated/setup.bash
-
+catkin_make_isolated --install --use-ninja --pkg cartographer_ros_msgs ceres-solver cartographer cartographer_ros
 ################ Realsense ROS Install ################
 
 # Install librealsense into home directory
@@ -60,7 +50,7 @@ git clone https://github.com/intel-ros/realsense.git
 cd realsense
 git checkout 2.0.3
 cd ../..
-sudo rosdep -y install --from-paths src --ignore-src
+rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
 catkin_make_isolated --install --pkg realsense2_camera
 
 
@@ -69,12 +59,13 @@ cd ~/catkin_ws/src
 git clone -b lunar https://github.com/ros-drivers/phidgets_drivers.git
 sudo apt-get install libusb-1.0-0 libusb-1.0-0-dev
 cd ..
-rosdep install --from-paths src --ignore-src -r -y
+rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
 catkin_make_isolated --install --pkg libphidget21 phidgets_api phidgets_drivers phidgets_high_speed_encoder phidgets_ik phidgets_imu
 
 cd ~/catkin_ws/src
 git clone https://github.com/ccny-ros-pkg/imu_tools.git
 cd ..
-rosdep install --from-paths src --ignore-src -r -y
+rosdep install --from-paths src --ignore-src --rosdistro=${ROS_DISTRO} -y
 catkin_make_isolated --install --pkg imu_complementary_filter imu_filter_madgwick imu_tools
 
+source install_isolated/setup.bash
