@@ -1,61 +1,42 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>rover_core_os</name>
-  <version>0.0.0</version>
-  <description>Core control functionality for NIU's Rover 2.0.</description>
+  <version>0.5.0</version>
+  <description>Core control functionality for the NIU Mars Rover Team's Ad Astra rover.</description>
   <maintainer email="ryandlewis.rl@gmail.com">Ryan D. Lewis</maintainer>
   <license>BSD</license>
   <url type="website">https://www.facebook.com/NIURover/</url>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>actionlib</build_depend>
+  <build_depend>actionlib_msgs</build_depend>
   <build_depend>roscpp</build_depend>
   <build_depend>rospy</build_depend>
   <build_depend>std_msgs</build_depend>
-  <build_depend>tf</build_depend>
-  <build_depend>geometry_msgs</build_depend>
-  <build_depend>sensor_msgs</build_depend>
-  <build_depend>move_base</build_depend>
-  <build_depend>message_generation</build_depend>
-  <build_depend>roslaunch</build_depend>
-  <build_depend>joint_state_publisher</build_depend>
-  <build_depend>robot_state_publisher</build_depend>
-  <build_depend>rviz</build_depend>
-  <build_depend>xacro</build_depend>
-  <build_depend>urdf</build_depend>
-  <build_depend>nav_msgs</build_depend>
-  <build_depend>robot_localization</build_depend>
-  <build_depend>joy</build_depend>
-  <build_depend>phidgets_imu</build_depend>
-
-  <build_export_depend>geometry_msgs</build_export_depend>
-  <build_export_depend>sensor_msgs</build_export_depend>
-  <build_export_depend>move_base</build_export_depend>
-  <build_export_depend>tf</build_export_depend>
+  <build_export_depend>actionlib</build_export_depend>
+  <build_export_depend>actionlib_msgs</build_export_depend>
   <build_export_depend>roscpp</build_export_depend>
   <build_export_depend>rospy</build_export_depend>
   <build_export_depend>std_msgs</build_export_depend>
-  <build_export_depend>rviz</build_export_depend>
-  <build_export_depend>urdf</build_export_depend>
-  <build_export_depend>joint_state_publisher</build_export_depend>
-  <build_export_depend>robot_state_publisher</build_export_depend>
-  <build_export_depend>nav_msgs</build_export_depend>
-  <build_export_depend>robot_localization</build_export_depend>
-  <build_export_depend>joy</build_export_depend>
-
-  <buildtool_depend>catkin</buildtool_depend>
-
+  <exec_depend>actionlib</exec_depend>
+  <exec_depend>actionlib_msgs</exec_depend>
   <exec_depend>roscpp</exec_depend>
   <exec_depend>rospy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
-  <exec_depend>message_runtime</exec_depend>
-  <exec_depend>tf</exec_depend>
-  <exec_depend>rviz</exec_depend>
-  <exec_depend>urdf</exec_depend>
-  <exec_depend>xacro</exec_depend>
-  <exec_depend>joint_state_publisher</exec_depend>
-  <exec_depend>robot_state_publisher</exec_depend>
-  <exec_depend>nav_msgs</exec_depend>
-  <exec_depend>sensor_msgs</exec_depend>
-  <exec_depend>robot_localization</exec_depend>
-  <exec_depend>joy</exec_depend>
+
+  <depend>tf</depend>
+  <depend>geometry_msgs</depend>
+  <depend>urdf</depend>
+  <depend>rviz</depend>
+  <depend>xacro</depend>
+  <depend>phidgets_imu</depend>
+  <depend>joy</depend>
+  <depend>robot_localization</depend>
+  <depend>nav_msgs</depend>
+  <depend>depthimage_to_laserscan</depend>
+  <depend>rgbd_launch</depend>
+  <depend>rtabmap_ros</depend>
+  <depend>rtabmap</depend>
+
   <export>
   </export>
 </package>

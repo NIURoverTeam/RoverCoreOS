@@ -1,4 +1,0 @@
-<launch>
-	<!-- Start the Rover -->
-  <node pkg="rover_core_os" type="driver.py" name="driver"/>
-</launch>
