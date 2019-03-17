@@ -1,0 +1,13 @@
+<launch>
+  <include file="$(find rtabmap_ros)/launch/rtabmap.launch">
+    <arg name="rtabmap_args" value="--delete_db_on_start"/>
+    <arg name="rgb_topic" value="/camera/data_throttled_image"/>
+    <arg name="depth_topic" value="/camera/data_throttled_image_depth"/>
+    <arg name="camera_info_topic" value="/camera/data_throttled_camera_info"/>
+    <arg name="queue_size" value="100"/>
+    <arg name="approx_sync" value="false"/>
+    <arg name="compressed" value="true"/>
+    <arg name="rviz" value="false"/>
+    <arg name="rtabmapviz" value="false"/>
+  </include>
+</launch>

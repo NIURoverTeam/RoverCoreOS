@@ -1,4 +1,35 @@
 <launch>
-	<!-- Start the Rover -->
-  <node pkg="rover_core_os" type="driver.py" name="driver"/>
+  <arg name="camera" default="true"/>
+  <arg name="mapping" default="true"/>
+  <!--Arguments for data_throttle -->
+  <arg name="rate" default="30"/>
+  <arg name="decimation" default="1"/>
+  <arg name="approx_sync" default="false"/>
+  <!-- Drive Control -->
+  <node pkg="rover_core_os" type="base_controller.py" name="base_controller"/>
+  <!--RealSense-->
+  <group if="$(arg camera)">
+    <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+      <arg name="align_depth" value="true"/>
+    </include>
+    <group ns="camera">
+      <node pkg="nodelet" type="nodelet" name="data_throttle" args="load rtabmap_ros/data_throttle realsense2_camera_manager" output="screen">
+        <param name="rate" type="double" value="$(arg rate)"/>
+        <param name="decimation" type="int" value="$(arg decimation)"/>
+        <param name="approx_sync" type="bool" value="$(arg approx_sync)"/>
+  
+        <remap from="rgb/image_in"       to="color/image_raw"/>
+        <remap from="depth/image_in"     to="aligned_depth_to_color/image_raw"/>
+        <remap from="rgb/camera_info_in" to="color/camera_info"/>
+  
+        <remap from="rgb/image_out"       to="data_throttled_image"/>
+        <remap from="depth/image_out"     to="data_throttled_image_depth"/>
+        <remap from="rgb/camera_info_out" to="data_throttled_camera_info"/>
+      </node>
+    </group>
+  </group>
+  <!-- Mapping -->
+  <group if="$(arg mapping)">
+    <include file="$(find rover_core_os)/launch/mapping.launch"/>
+  </group>
 </launch>
