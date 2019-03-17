@@ -2,6 +2,8 @@
 
 ## Xbox One (Black)
 
+Checkout the [xpadneo](https://github.com/atar-axis/xpadneo) driver for install and connection instructions.
+
 | Index | Buttons                   |
 |-------|---------------------------|
 | 0     | A                         |
