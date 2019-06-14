@@ -1,7 +1,18 @@
-# Rover 2.0 OS
+:warning::construction:Under Construction:construction::warning:
+
+# Rover 2.0 Core OS
 
 <img src="https://github.com/NIURoverTeam/RoverCoreOS/blob/master/assets/NIU%20Rover%20Logo%20V2.png" width="250" height="250"/>
 
-## The NIU Mars Rover Team and Ad Astra
+## Developers Start Here
 
-_Under construction_
+Looking to get started developing for the NIU Mars Rover Team
+
+# Getting in Touch
+
+Interested in joining, want to sponsor or contribute, or have questions? Here's some ways you can reach out or find out more about us:
+
+* [NIURover@gmail.com](mailto:niurover@gmail.com)
+* [Our site](https://niurover.wixsite.com/niurover)
+* [Facebook](https://www.facebook.com/NIURover)
+* [NIU CEET Student Organization Page](https://www.niu.edu/CEET/student-organizations/index.shtml)
