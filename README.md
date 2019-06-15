@@ -10,7 +10,7 @@ Looking to get started developing for the NIU Mars Rover Team? Check out the [wi
 
 ## Working With RoverCoreOS
 
-You'll need a Robotic Operating System (ROS) Development Environment set up to run RoverCoreOS. Check [here](https://github.com/NIURoverTeam/RoverCoreOS/wiki/Setting-Up-a-Development-Environment) to learn how to set one up.
+Before you can run RoverCoreOS, you'll need to set up Robotic Operating System (ROS) Development Environment. Check [here](https://github.com/NIURoverTeam/RoverCoreOS/wiki/Setting-Up-a-Development-Environment) to learn how to set one up.
 
 *TODO: Add a description of the Topography of the Repo and how to use each launch file/script*
 
