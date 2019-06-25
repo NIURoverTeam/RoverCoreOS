@@ -12,7 +12,14 @@ Looking to get started developing for the NIU Mars Rover Team? Check out the [wi
 
 Before you can run RoverCoreOS, you'll need to set up Robotic Operating System (ROS) Development Environment. Check [here](https://github.com/NIURoverTeam/RoverCoreOS/wiki/Setting-Up-a-Development-Environment) to learn how to set one up.
 
-*TODO: Add a description of the Topography of the Repo and how to use each launch file/script*
+### Structure and Topography
+
+* `assets`: images and other auxiliary files
+* `config`: configuration files for packages used by the Rover, including the Navigation Stack
+* `launch`: launch files to run various aspects of the Rovers functionality, in part or in whole. For usage instructions, see the "Running" section below
+* `nodes`: individual Python or C++ files that encapsulate important aspects of the Rovers code
+* `rviz`: configuration files for displaying UI tools using Rviz
+* `urdf`: model files for visualizing the Rover
 
 ### Downloading & Installing Rover Core OS
 
@@ -26,9 +33,10 @@ Once that's done, you should be able to run `catkin_make_isolated --pkg rover_co
 You can get Rover 2.0 up and running using `roslaunch`
 
 First, run `roscore` in a separate terminal. Next run one of the following:
-* `roslaunch rover_core_os display_model.launch`
-* `roslaunch rover_core_os start_rover.launch`
-* `roslaunch rover_core_os base_station.launch`
+* `roslaunch rover_core_os display_rover.launch`: displays the URDF model of the Rover in Rviz
+* `roslaunch rover_core_os start_rover.launch`: launch file to run on the Rover itself
+* `roslaunch rover_core_os control_center.launch`: starts the base station to remotely control the Rover
+* `roslaunch rover_core_os mapping.launch`: launch file wrapping the mapping functionality of the Rover, meant to be called in either the Rover or Control Center launch files, but can be called separately for troubleshooting purposes.
 
 # Getting in Touch
 
