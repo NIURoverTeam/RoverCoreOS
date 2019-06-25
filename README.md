@@ -1,5 +1,3 @@
-:warning::construction:Under Construction:construction::warning:
-
 # Rover 2.0 Core OS
 
 <img src="https://github.com/NIURoverTeam/RoverCoreOS/blob/master/assets/NIU%20Rover%20Logo%20V2.png" width="250" height="250"/>
