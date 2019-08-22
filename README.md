@@ -25,9 +25,11 @@ You can grab the source code from this repository using git: `git clone https://
 
 #### Install Dependencies
 
-1. Install the [Realsense SDK 2.0](https://realsense.intel.com/sdk-2/#install)
+1. `sudo apt-get install ros-melodic-navigation`
 1. Run `cd ~/catkin_ws && rosdep install --from-paths src --ignore-src -r -y`
-1. Run `catkin_make_isolated --pkg rover_core_os` in the catkin workspace root directory to build the neccessary code and dependencies.
+1. Install the [Realsense SDK 2.0](https://realsense.intel.com/sdk-2/#install)
+1. Install the [Realsense ROS Wrapper](https://github.com/IntelRealSense/realsense-ros#step-3-install-intel-realsense-ros-from-sources). 
+  1. Note: use `catkin_make install --pkg realsense2_description realsense2_camera` instead of `catkin_make install`
 
 ### Running
 You can get Rover 2.0 up and running using `roslaunch`.
