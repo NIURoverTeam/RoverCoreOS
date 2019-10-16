@@ -10,6 +10,6 @@ jobs:
     steps:
       - name: Black Code Formatter
         run: |
-          pip install black
+          pip3 install black
           set -e
           sh -c "black . --check"
