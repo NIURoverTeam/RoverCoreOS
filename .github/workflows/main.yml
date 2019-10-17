@@ -10,7 +10,9 @@ jobs:
     steps:
       - uses: "lgeiger/black-action@master"
         with:
-          args: ". --check"
+          entrypoint: /entrypoint.sh
+          args: . --checkout
+        
 #       - name: Install Black
 #         run: pip3 install black
 #       - uses: actions/checkout@v1
