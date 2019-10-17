@@ -8,7 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Black Code Formatter
-        run: |
-          pip3 install black
-          black --check .
+      - name: Install Black
+        run: pip3 install black
+        
+      - name: Run Black
+        run: black --check .
