@@ -11,5 +11,4 @@ jobs:
       - name: Black Code Formatter
         run: |
           pip3 install black
-          set -e
-          sh -c "black . --check"
+          black . --check
