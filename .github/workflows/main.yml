@@ -11,4 +11,4 @@ jobs:
       - name: Black Code Formatter
         run: |
           pip3 install black
-          black . --check
+          black --check .
