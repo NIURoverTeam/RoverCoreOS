@@ -8,8 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Install Black
-        run: pip3 install black
-        
-      - name: Run Black
-        run: black --check .
+      - uses: "lgeiger/black-action@master"
+        with:
+          args: ". --check"
+#       - name: Install Black
+#         run: pip3 install black
+#       - uses: actions/checkout@v1
+#       - name: Run Black
+#         run: black --check .
