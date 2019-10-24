@@ -7,22 +7,12 @@
   <license>BSD</license>
   <url type="website">https://www.facebook.com/NIURover/</url>
   <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>actionlib</build_depend>
-  <build_depend>actionlib_msgs</build_depend>
-  <build_depend>roscpp</build_depend>
-  <build_depend>rospy</build_depend>
-  <build_depend>std_msgs</build_depend>
-  <build_export_depend>actionlib</build_export_depend>
-  <build_export_depend>actionlib_msgs</build_export_depend>
-  <build_export_depend>roscpp</build_export_depend>
-  <build_export_depend>rospy</build_export_depend>
-  <build_export_depend>std_msgs</build_export_depend>
-  <exec_depend>actionlib</exec_depend>
-  <exec_depend>actionlib_msgs</exec_depend>
-  <exec_depend>roscpp</exec_depend>
-  <exec_depend>rospy</exec_depend>
-  <exec_depend>std_msgs</exec_depend>
 
+  <depend>actionlib</depend>
+  <depend>actionlib_msgs</depend>
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
   <depend>tf</depend>
   <depend>geometry_msgs</depend>
   <depend>urdf</depend>
@@ -36,6 +26,7 @@
   <depend>rgbd_launch</depend>
   <depend>rtabmap_ros</depend>
   <depend>rtabmap</depend>
+  <depend>python-smbus</depend>
 
   <export>
   </export>

@@ -14,14 +14,14 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
   tf
   geometry_msgs
-  move_base
+  #  move_base
   sensor_msgs
   rviz
   urdf
-  robot_state_publisher
-  joint_state_publisher
+  # robot_state_publisher
+  # joint_state_publisher
   nav_msgs
-  robot_localization
+  # robot_localization
 )
 
 ## System dependencies are found with CMake's conventions
