@@ -6,7 +6,7 @@ jobs:
         steps:
             - uses: actions/checkout@v1
             - name: black
-              uses: lgeiger/black-action@v1.0.1
+              uses: abn/black-action@issue/3
               with:
                   args: .
             - name: Check for modified files
