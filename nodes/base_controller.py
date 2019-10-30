@@ -8,12 +8,13 @@ from time import sleep
 import tf
 import smbus
 
-roslib.load_manifest('rover_core_os')
+roslib.load_manifest("rover_core_os")
 
 # Configure our I2C Bus
 bus = smbus.SMBus(0)
-dev_adr = 0x0a
+dev_adr = 0x0A
 control_char = 0x24
+
 
 def controller_input(data):
     # Check if the back button has been pressed, and if it has, shutdown
@@ -28,19 +29,24 @@ def controller_input(data):
     rightDir = 0x52 if rightPower >= 0 else 0x72
 
     # Write to I2C
-    bus.write_i2c_block_data(dev_adr,control_char,[leftDir,int(abs(leftPower)),rightDir,int(abs(rightPower))])
+    bus.write_i2c_block_data(
+        dev_adr,
+        control_char,
+        [leftDir, int(abs(leftPower)), rightDir, int(abs(rightPower))],
+    )
 
-if __name__ == '__main__':
-    #Prep all the topics we want to publish/subscribe to
-    logger = rospy.Publisher('logger', String, queue_size=10)
+
+if __name__ == "__main__":
+    # Prep all the topics we want to publish/subscribe to
+    logger = rospy.Publisher("logger", String, queue_size=10)
 
     rospy.Subscriber("joy", Joy, controller_input)
 
     # Start the driver node
-    rospy.init_node('base_controller')
+    rospy.init_node("base_controller")
 
     # Start node logging
-    log_string = 'Starting base_controller....%s' % rospy.get_time()
+    log_string = "Starting base_controller....%s" % rospy.get_time()
     rospy.loginfo(log_string)
     logger.publish(log_string)
 
