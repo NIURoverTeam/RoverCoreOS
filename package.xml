@@ -26,7 +26,7 @@
   <depend>rgbd_launch</depend>
   <depend>rtabmap_ros</depend>
   <depend>rtabmap</depend>
-  <depend>python-smbus</depend>
+  <!--<depend>python-smbus2</depend>-->
 
   <export>
   </export>
