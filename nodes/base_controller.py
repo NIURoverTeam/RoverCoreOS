@@ -4,10 +4,10 @@ from std_msgs.msg import String
 from sensor_msgs.msg import Joy
 import rospy
 import struct
-import serial
 from time import sleep
 import tf
-# from smbus2 import SMBus
+from smbus2 import SMBus
+import serial
 
 roslib.load_manifest('rover_core_os')
 
