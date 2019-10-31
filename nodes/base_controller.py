@@ -9,11 +9,9 @@ import tf
 from smbus2 import SMBus
 import serial
 
-roslib.load_manifest('rover_core_os')
+roslib.load_manifest("rover_core_os")
 
 # Configure our I2C Bus
-# bus = SMBus(0)
-# dev_adr = 0x41
 ser = serial.Serial('/dev/ttyACM0', 9600)
 
 def controller_input(data):
@@ -31,6 +29,7 @@ def controller_input(data):
     # Write to I2C
     # bus.write_i2c_block_data(dev_adr,0,[leftDir,int(abs(leftPower)),rightDir,int(abs(rightPower))])
     ser.write(struct.pack('>BBBB', leftDir, int(abs(leftPower)),rightDir, int(abs(rightPower))))
+    
 if __name__ == '__main__':
     #Prep all the topics we want to publish/subscribe to
     logger = rospy.Publisher('logger', String, queue_size=10)
@@ -38,10 +37,10 @@ if __name__ == '__main__':
     rospy.Subscriber("joy", Joy, controller_input)
 
     # Start the driver node
-    rospy.init_node('base_controller')
+    rospy.init_node("base_controller")
 
     # Start node logging
-    log_string = 'Starting base_controller....%s' % rospy.get_time()
+    log_string = "Starting base_controller....%s" % rospy.get_time()
     rospy.loginfo(log_string)
     logger.publish(log_string)
 

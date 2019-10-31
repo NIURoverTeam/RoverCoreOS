@@ -1,20 +1,23 @@
-name: CI
-
-on: [push]
-
+name: auto-format
+on: push
 jobs:
-  lint:
-
-    runs-on: ubuntu-latest
-    
-    steps:
-      - uses: "lgeiger/black-action@master"
-        with:
-          entrypoint: /entrypoint.sh
-          args: . --checkout
-        
-#       - name: Install Black
-#         run: pip3 install black
-#       - uses: actions/checkout@v1
-#       - name: Run Black
-#         run: black --check .
+    format:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v1
+            - name: black
+              uses: lgeiger/black-action@master
+              with:
+                  args: .
+            - name: Check for modified files
+              id: git-check
+              run: echo ::set-output name=modified::$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)
+            - name: Push changes
+              if: steps.git-check.outputs.modified == 'true'
+              run: |
+                  git config --global user.name 'NIU Rover'
+                  git config --global user.email 'niurover@gmail.com'
+                  git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+                  git checkout $GITHUB_HEAD_REF
+                  git commit -am "Automated changes"
+                  git push
