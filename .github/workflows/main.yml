@@ -20,4 +20,4 @@ jobs:
                   git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
                   git checkout $GITHUB_REF
                   git commit -am "Automated changes"
-                  git push origin HEAD:`basename $GITHUB_REF`
+                  git push origin HEAD:`basename /$GITHUB_REF`
