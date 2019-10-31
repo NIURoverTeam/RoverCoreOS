@@ -12,7 +12,8 @@ import serial
 roslib.load_manifest("rover_core_os")
 
 # Configure our I2C Bus
-ser = serial.Serial('/dev/ttyACM0', 9600)
+ser = serial.Serial("/dev/ttyACM0", 9600)
+
 
 def controller_input(data):
     # Check if the back button has been pressed, and if it has, shutdown
@@ -28,11 +29,16 @@ def controller_input(data):
 
     # Write to I2C
     # bus.write_i2c_block_data(dev_adr,0,[leftDir,int(abs(leftPower)),rightDir,int(abs(rightPower))])
-    ser.write(struct.pack('>BBBB', leftDir, int(abs(leftPower)),rightDir, int(abs(rightPower))))
-    
-if __name__ == '__main__':
-    #Prep all the topics we want to publish/subscribe to
-    logger = rospy.Publisher('logger', String, queue_size=10)
+    ser.write(
+        struct.pack(
+            ">BBBB", leftDir, int(abs(leftPower)), rightDir, int(abs(rightPower))
+        )
+    )
+
+
+if __name__ == "__main__":
+    # Prep all the topics we want to publish/subscribe to
+    logger = rospy.Publisher("logger", String, queue_size=10)
 
     rospy.Subscriber("joy", Joy, controller_input)
 
