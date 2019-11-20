@@ -6,14 +6,13 @@ import rospy
 import struct
 from time import sleep
 import tf
-import smbus
+from smbus2 import SMBus
+import serial
 
 roslib.load_manifest("rover_core_os")
 
 # Configure our I2C Bus
-bus = smbus.SMBus(0)
-dev_adr = 0x0A
-control_char = 0x24
+ser = serial.Serial("/dev/ttyACM0", 9600)
 
 
 def controller_input(data):
@@ -23,16 +22,17 @@ def controller_input(data):
         rospy.signal_shutdown("Back Button Pressed!")
 
     # Calculate the power based on the vertical position of the left and right thumbsticks
-    leftPower = round(data.axes[1] * 50)
-    rightPower = round(data.axes[4] * 50)
+    leftPower = round(data.axes[1] * 250)
+    rightPower = round(data.axes[4] * 250)
     leftDir = 0x4C if leftPower >= 0 else 0x6C
     rightDir = 0x52 if rightPower >= 0 else 0x72
 
     # Write to I2C
-    bus.write_i2c_block_data(
-        dev_adr,
-        control_char,
-        [leftDir, int(abs(leftPower)), rightDir, int(abs(rightPower))],
+    # bus.write_i2c_block_data(dev_adr,0,[leftDir,int(abs(leftPower)),rightDir,int(abs(rightPower))])
+    ser.write(
+        struct.pack(
+            ">BBBB", leftDir, int(abs(leftPower)), rightDir, int(abs(rightPower))
+        )
     )
 
 
