@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<robot name="rover_5">
+    <!-- Materials -->
+    <material name="white">
+        <color rgba="1 1 1 1"/>
+    </material>
+    <material name="black">
+        <color rgba="0 0 0 1"/>
+    </material>
+    <material name="gray">
+        <color rgba="0.7 0.7 0.7 1"/>
+    </material>
+    <material name="acrylic">
+        <color rgba="1 1 1 .9"/>
+    </material>
+    <!-- Links -->
+    <link name='base_link'>
+        <visual>
+            <geometry>
+               <mesh filename="file:///$(arg meshDirectory)/base_link.stl">
+                </mesh>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>_
+    <link name='wheel_1'>
+        <visual>
+            <origin xyz=".3542 0 0"/>
+            <geometry>
+                <mesh filename="file:///$(arg meshDirectory)/wheel_scaled.stl">
+                </mesh>
+            </geometry>
+            <material name="white"/>
+        </visual>
+    </link>_
+    <link name='wheel_2'>
+        <visual>
+            <geometry>
+                <mesh filename="file:///$(arg meshDirectory)/wheel_scaled.stl">
+                </mesh>
+            </geometry>
+            <material name="white"/>
+            <origin xyz=".3542 0 0"/>
+        </visual>
+    </link>_
+    <link name='wheel_3'>
+        <visual>
+            <geometry>
+                <mesh filename="file:///$(arg meshDirectory)/wheel_scaled.stl">
+                </mesh>
+            </geometry>
+            <material name="white"/>
+            <origin xyz=".3542 0 0" rpy="3.14159 0 0"/>
+        </visual>
+    </link>_
+    <link name='wheel_4'>
+        <visual>
+            <geometry>
+                <mesh filename="file:///$(arg meshDirectory)/wheel_scaled.stl">
+                </mesh>
+            </geometry>
+            <origin xyz=".3542 0 0" rpy="3.14159 0 0"/>
+            <material name="white"/>
+        </visual>
+    </link>_
+    <link name='top_rack'>
+        <visual>
+            <geometry>
+                <mesh filename="file:///$(arg meshDirectory)/rack.stl">
+                </mesh>
+            </geometry>
+            <material name="acrylic"/>
+        </visual>
+    </link>_
+    <link name='intel_realsense'>
+        <visual>
+            <geometry>
+                <mesh filename="file:///$(arg meshDirectory)/Intel_RealSense_Depth_Camera_D435.STL" scale=".001 .001 .001">
+                </mesh>
+            </geometry>
+            <material name="gray"/>
+        </visual>
+    </link>
+    <link name='imu_link'>
+        <visual>
+            <geometry>
+                <!-- <box size=".038 .014 .038"/> -->
+                <box size=".038 .038 .014"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+    </link>
+    <link name="usb_gps">
+        <visual>
+            <geometry>
+                <cylinder radius=".0251" length=".02"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+    </link>
+    <!-- Joints -->_
+    <joint name="base_to_wheel_1" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel_1"/>
+        <axis xyz="0 1 0"/>
+        <origin xyz="-.3542 0 0"/>
+    </joint>
+    <joint name="base_to_wheel_2" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel_2"/>
+        <axis xyz="0 1 0"/>
+        <origin xyz="-.18 0 0"/>
+    </joint>
+    <joint name="base_to_wheel_3" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel_3"/>
+        <axis xyz="0 1 0"/>
+        <origin xyz="-.3542 .09 0"/>
+    </joint>
+    <joint name="base_to_wheel_4" type="continuous">
+        <parent link="base_link"/>
+        <child link="wheel_4"/>
+        <axis xyz="0 1 0"/>
+        <origin xyz="-.18 .09 0"/>
+    </joint>
+    <joint name="base_to_rack" type="fixed">
+        <parent link="base_link"/>
+        <child link="top_rack"/>
+        <origin xyz="-.353 .0944 .058"/>
+    </joint>
+    <joint name="rack_to_realsense" type="fixed">
+        <parent link="top_rack"/>
+        <child link="intel_realsense"/>
+        <origin xyz="0.04 -0.005 0.075" rpy="1.570795 0 -1.570795"/>
+    </joint>
+    <joint name="base_to_imu_link" type="fixed">
+        <parent link="base_link"/>
+        <child link="imu_link"/>
+        <origin xyz="-.265 .1 .04" rpy="0 0 0"/>
+    </joint>
+    <joint name="rack_to_gps" type="fixed">
+        <parent link="top_rack"/>
+        <child link="usb_gps"/>
+        <origin xyz=".0745 -.031 .069"/>
+    </joint>
+</robot>
