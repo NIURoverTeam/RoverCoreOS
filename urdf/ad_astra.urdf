@@ -1,3 +1,47 @@
-<?xml version="1.0"?>
-<robot name="ad_astra">
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="New Rover 2.08 12.18.18 URDF and Meshes">
+  <link
+    name="rover">
+    <inertial>
+      <origin
+        xyz="0.732037258403056 -1.22528722221355 -0.307884816987697"
+        rpy="0 0 0" />
+      <mass
+        value="44.9551052086405" />
+      <inertia
+        ixx="0.249365000568996"
+        ixy="0.00286908768004084"
+        ixz="0.00478629639364145"
+        iyy="0.378358154266907"
+        iyz="-0.000144177406744322"
+        izz="0.342606956552199" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New Rover 2.08 12.18.18 URDF and Meshes/meshes/rover.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New Rover 2.08 12.18.18 URDF and Meshes/meshes/rover.STL" />
+      </geometry>
+    </collision>
+  </link>
 </robot>
