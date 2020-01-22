@@ -3,22 +3,22 @@
      Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
-  name="New Rover 2.08 12.18.18 URDF and Meshes">
+  name="New Rover 2.08 12.18.18.SLDASM">
   <link
     name="rover">
     <inertial>
       <origin
-        xyz="0.732037258403056 -1.22528722221355 -0.307884816987697"
+        xyz="0.695500740448138 0.372436319483529 -1.21129733143981"
         rpy="0 0 0" />
       <mass
-        value="44.9551052086405" />
+        value="35.8886782840091" />
       <inertia
-        ixx="0.249365000568996"
-        ixy="0.00286908768004084"
-        ixz="0.00478629639364145"
-        iyy="0.378358154266907"
-        iyz="-0.000144177406744322"
-        izz="0.342606956552199" />
+        ixx="0.242029962501654"
+        ixy="-0.00907014778985206"
+        ixz="0.00292946100096671"
+        iyy="0.326825069554731"
+        iyz="-0.000110185424612106"
+        izz="0.360821031360228" />
     </inertial>
     <visual>
       <origin
@@ -26,7 +26,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://New Rover 2.08 12.18.18 URDF and Meshes/meshes/rover.STL" />
+          filename="package://New Rover 2.08 12.18.18.SLDASM/meshes/rover.STL" />
       </geometry>
       <material
         name="">
@@ -40,8 +40,462 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://New Rover 2.08 12.18.18 URDF and Meshes/meshes/rover.STL" />
+          filename="package://New Rover 2.08 12.18.18.SLDASM/meshes/rover.STL" />
       </geometry>
     </collision>
   </link>
+  <link
+    name="arm_link1">
+    <inertial>
+      <origin
+        xyz="0.0699044805443383 -0.0502779817987901 0.18008786168402"
+        rpy="0 0 0" />
+      <mass
+        value="0.720067118020386" />
+      <inertia
+        ixx="0.0211432421575903"
+        ixy="2.31123062284814E-10"
+        ixz="-0.00893097876384933"
+        iyy="0.0250194679232178"
+        iyz="1.03278642853578E-10"
+        izz="0.0040102890705386" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New Rover 2.08 12.18.18.SLDASM/meshes/arm_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New Rover 2.08 12.18.18.SLDASM/meshes/arm_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_joint1"
+    type="revolute">
+    <origin
+      xyz="0.51493 0.33908 -1.8382"
+      rpy="0 0.87482 -3.091" />
+    <parent
+      link="rover" />
+    <child
+      link="arm_link1" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="arm_link2">
+    <inertial>
+      <origin
+        xyz="0.00718911847607873 0.0472503253071714 0.044014481929263"
+        rpy="0 0 0" />
+      <mass
+        value="2.23804464644257" />
+      <inertia
+        ixx="0.0133092116911412"
+        ixy="-0.000583035788147493"
+        ixz="-1.0632591279972E-08"
+        iyy="0.000584846224951899"
+        iyz="-6.06427312673914E-10"
+        izz="0.0135768762793212" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New Rover 2.08 12.18.18.SLDASM/meshes/arm_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New Rover 2.08 12.18.18.SLDASM/meshes/arm_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_joint2"
+    type="revolute">
+    <origin
+      xyz="0.55351 0.43414 -1.5311"
+      rpy="-1.5708 0.0077357 -3.091" />
+    <parent
+      link="rover" />
+    <child
+      link="arm_link2" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="arm_link3">
+    <inertial>
+      <origin
+        xyz="-6.35662800457792E-05 -0.0319246758793945 0.0407086"
+        rpy="0 0 0" />
+      <mass
+        value="0.203954106945647" />
+      <inertia
+        ixx="0.000158182677743089"
+        ixy="-6.66374420810665E-07"
+        ixz="1.54159996400283E-19"
+        iyy="7.62365059059117E-05"
+        iyz="1.08017380290237E-19"
+        izz="0.000233048527069448" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New Rover 2.08 12.18.18.SLDASM/meshes/arm_link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New Rover 2.08 12.18.18.SLDASM/meshes/arm_link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm_joint3"
+    type="continuous">
+    <origin
+      xyz="0.54402 0.34873 -1.382"
+      rpy="-1.5708 -0.0077357 0.050544" />
+    <parent
+      link="rover" />
+    <child
+      link="arm_link3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="chassis_link">
+    <inertial>
+      <origin
+        xyz="0.255022011517405 0.0964106607693245 0.108015059797024"
+        rpy="0 0 0" />
+      <mass
+        value="9.14786758671654" />
+      <inertia
+        ixx="0.239326202919808"
+        ixy="5.58898019301747E-08"
+        ixz="-6.51557492131472E-05"
+        iyy="0.288132622904962"
+        iyz="8.12747324546307E-06"
+        izz="0.17327528229484" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New Rover 2.08 12.18.18.SLDASM/meshes/chassis_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New Rover 2.08 12.18.18.SLDASM/meshes/chassis_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="chassis_joint"
+    type="fixed">
+    <origin
+      xyz="0.68321 0.60762 -1.2069"
+      rpy="-1.5631 0 -1.4452" />
+    <parent
+      link="rover" />
+    <child
+      link="chassis_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_train_link1">
+    <inertial>
+      <origin
+        xyz="0.0163491374493057 -0.0111444155228054 0.477504057909838"
+        rpy="0 0 0" />
+      <mass
+        value="3.60174015051005" />
+      <inertia
+        ixx="0.0129545923053867"
+        ixy="-1.46889579715821E-07"
+        ixz="-0.000328809005074156"
+        iyy="0.0107782569537086"
+        iyz="-5.34634347534304E-08"
+        izz="0.00815535508189018" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New Rover 2.08 12.18.18.SLDASM/meshes/left_train_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New Rover 2.08 12.18.18.SLDASM/meshes/left_train_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_train_joint1"
+    type="revolute">
+    <origin
+      xyz="0.63113 0.64768 -1.2613"
+      rpy="0 -1.2217 -3.016" />
+    <parent
+      link="rover" />
+    <child
+      link="left_train_link1" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_train_link2">
+    <inertial>
+      <origin
+        xyz="-0.179587863316594 0.17283704542947 -0.0944113743656682"
+        rpy="0 0 0" />
+      <mass
+        value="6.33331269612713" />
+      <inertia
+        ixx="0.0143439844799157"
+        ixy="-3.9224180182192E-05"
+        ixz="1.27589366016282E-06"
+        iyy="0.00922099362049379"
+        iyz="0.000114245060201313"
+        izz="0.0129186929002011" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New Rover 2.08 12.18.18.SLDASM/meshes/left_train_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New Rover 2.08 12.18.18.SLDASM/meshes/left_train_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_train_joint2"
+    type="revolute">
+    <origin
+      xyz="0.22048 0.53021 -0.9439"
+      rpy="-1.5708 0.19992 -3.016" />
+    <parent
+      link="rover" />
+    <child
+      link="left_train_link2" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_train_link1">
+    <inertial>
+      <origin
+        xyz="-0.00902271807947685 0.0449433766035814 -0.100804904937133"
+        rpy="0 0 0" />
+      <mass
+        value="3.69689838790142" />
+      <inertia
+        ixx="0.0107795447537257"
+        ixy="1.55045535119662E-07"
+        ixz="1.9893957003774E-08"
+        iyy="0.01170400097908"
+        iyz="0.00214692977749257"
+        izz="0.00946166376227087" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New Rover 2.08 12.18.18.SLDASM/meshes/right_train_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.650980392156863 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New Rover 2.08 12.18.18.SLDASM/meshes/right_train_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_train_joint1"
+    type="revolute">
+    <origin
+      xyz="1.2304 0.15416 -1.0539"
+      rpy="-1.6984 0 -1.4452" />
+    <parent
+      link="rover" />
+    <child
+      link="right_train_link1" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_train_link2">
+    <inertial>
+      <origin
+        xyz="-0.18094823785311 0.173162419120339 -0.0395143175454025"
+        rpy="0 0 0" />
+      <mass
+        value="6.3263143064534" />
+      <inertia
+        ixx="0.0143541707364026"
+        ixy="-2.66239484840126E-05"
+        ixz="-1.2758936601587E-06"
+        iyy="0.00923098582753301"
+        iyz="-0.000113932426949824"
+        izz="0.0129392400937483" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New Rover 2.08 12.18.18.SLDASM/meshes/right_train_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.647058823529412 0.619607843137255 0.588235294117647 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://New Rover 2.08 12.18.18.SLDASM/meshes/right_train_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_train_joint2"
+    type="revolute">
+    <origin
+      xyz="0.32989 -0.032815 -0.91339"
+      rpy="-1.5708 0.020944 -3.016" />
+    <parent
+      link="rover" />
+    <child
+      link="right_train_link2" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
 </robot>
