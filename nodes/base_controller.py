@@ -1,16 +1,16 @@
 #!/usr/bin/env python
 
 # Command Line Usage:
-#   To use i2c:         rosrun rover_core_os base_controller_arduino.py _is_i2c:=true _device:=0
-#   To use Serial:      rosrun rover_core_os base_controller_arduino.py _is_i2c:=false _device:=/dev/ttyACM0
+#   To use i2c:         rosrun rover_core_os base_controller.py _is_i2c:=true _device:=0
+#   To use Serial:      rosrun rover_core_os base_controller.py _is_i2c:=false _device:=/dev/ttyACM0
 # Launch File Usage:
 #   To use i2c:
-#       <node pkg="rover_core_os" type="base_controller_arduino.py" name="base_controller_arduino">
+#       <node pkg="rover_core_os" type="base_controller.py" name="base_controller">
 #           <param name='is_i2c' value='true'/>
 #           <param name='device' value='0'/>
 #       </node>
 #   To use Serial:
-#       <node pkg="rover_core_os" type="base_controller_arduino.py" name="base_controller_arduino">
+#       <node pkg="rover_core_os" type="base_controller.py" name="base_controller">
 #           <param name='is_i2c' value='false'/>
 #           <param name='device' value='/dev/ttyACM0'/>
 #       </node>
@@ -27,15 +27,12 @@ import serial
 roslib.load_manifest("rover_core_os")
 
 # Figure out whether we want i2c or serial
-#if rospy.get_param("~is_i2c") == "true":
+if rospy.get_param("/base_controller/is_i2c") == "true":
     # Configure our I2C Bus
-#bus = SMBus(rospy.get_param("~device"))
-#bus = SMBus(1)
-#dev_adr = 0x08
-#else:
-#ser = serial.Serial(rospy.get_param("~device"), 9600)
-ser = serial.Serial("/dev/ttyACM0", 9600)
-
+    bus = SMBus(rospy.get_param("/base_controller/device"))
+    dev_adr = 0x08
+else:
+    ser = serial.Serial(rospy.get_param("/base_controller/device"), 9600)
 
 def controller_input(data):
     # Check if the back button has been pressed, and if it has, shutdown
@@ -50,11 +47,11 @@ def controller_input(data):
     rightDir = 0x52 if rightPower >= 0 else 0x72
 
     # Write to I2C or Serial, depending
-#    if rospy.get_param("~is_i2c") == "true":
-#    bus.write_i2c_block_data(
-#        dev_adr, 0, [leftDir, int(abs(leftPower)), rightDir, int(abs(rightPower))]
-#        )
-#    else:
+    if rospy.get_param("/base_controller/is_i2c") == "true":
+    bus.write_i2c_block_data(
+        dev_adr, 0, [leftDir, int(abs(leftPower)), rightDir, int(abs(rightPower))]
+        )
+    else:
     ser.write(
         struct.pack(
             ">BBBB", leftDir, int(abs(leftPower)), rightDir, int(abs(rightPower))

@@ -3,8 +3,10 @@
 	<param name="joystick_controller/dev" value="/dev/input/js$(arg jsX)"/>
 	<!-- Drive Control -->
 	<node name="joystick_controller" pkg="joy" type="joy_node"/>
-	<node pkg="rover_core_os" type="base_controller_arduino.py" name="base_controller_arduino">
+	<node pkg="rover_core_os" type="base_controller.py" name="base_controller">
 		<param name='is_i2c' value='false'/>
 		<param name='device' value='/dev/ttyACM0'/>
+		<!-- param name='is_i2c' value='true'/ -->
+		<!-- param name='device' value='1'/ -->
 	</node>
 </launch>
