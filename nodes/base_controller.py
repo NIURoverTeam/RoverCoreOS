@@ -48,15 +48,15 @@ def controller_input(data):
 
     # Write to I2C or Serial, depending
     if rospy.get_param("/base_controller/is_i2c") == "true":
-    bus.write_i2c_block_data(
-        dev_adr, 0, [leftDir, int(abs(leftPower)), rightDir, int(abs(rightPower))]
+        bus.write_i2c_block_data(
+            dev_adr, 0, [leftDir, int(abs(leftPower)), rightDir, int(abs(rightPower))]
         )
     else:
-    ser.write(
-        struct.pack(
-            ">BBBB", leftDir, int(abs(leftPower)), rightDir, int(abs(rightPower))
+        ser.write(
+            struct.pack(
+                ">BBBB", leftDir, int(abs(leftPower)), rightDir, int(abs(rightPower))
+            )
         )
-    )
 
 
 # Main execution starts here
