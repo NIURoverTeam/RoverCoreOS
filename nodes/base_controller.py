@@ -34,6 +34,7 @@ if rospy.get_param("/base_controller/is_i2c") == "true":
 else:
     ser = serial.Serial(rospy.get_param("/base_controller/device"), 9600)
 
+
 def controller_input(data):
     # Check if the back button has been pressed, and if it has, shutdown
     if data.buttons[6] == 1:
