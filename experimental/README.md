@@ -21,11 +21,13 @@ The design I'll be using is based on industrial pallet-packing robots, and at it
 The tech stack I used included:
 
 * **Python**
+
 TODO
 
 Getting Started
 ---
 ### Pre-requisites and Local Development
+
 TODO
 
 Authors
@@ -35,4 +37,5 @@ Kofi Adu-Gyan
 Acknowledgements
 ---
 https://robohub.org/robotics-maths-python-a-fledgling-computer-scientists-guide-to-inverse-kinematics/
+
 Alistair Wick for the GIF images
