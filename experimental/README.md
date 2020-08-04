@@ -5,8 +5,10 @@
 ### Introduction
 A branch for me to experiment with python in order to build code to control a Rover arm with 3 DOF. The calculations will have to be tweaked for whatever measurements our completed arm will come out to.
 
+The python code will make the calculations and the arduino IDE should control the motors
+
 ### Overview 
-The completed Python application, should connect to the arm via serial and allowed the user to move the goal position of the end-effector by clicking and dragging, or by sending commands from another application running on the same computer
+The completed application, should connect to the arm via serial and allowed the user to move the goal position of the end-effector by clicking and dragging, or by sending commands from another application running on the same computer
 
 The design I'll be using is based on industrial pallet-packing robots, and at its core has three degrees of freedom, or ‘axes’ on which it can move. Think left to right, in and out and up and down; it basically means that the arm can move in three different ways. The GIFs below show the different types of movement: the entire arm can swivel on its base, the “main arm” translates the elbow in and out from the centre, and the “actuator” drives the forearm, which in turn translates the end-effector up and down. A 3-DOF arm like this has the handy property of having a unique solution for each possible position of its end-effector.
 
