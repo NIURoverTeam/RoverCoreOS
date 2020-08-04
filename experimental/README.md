@@ -3,7 +3,7 @@
 # Arm-Code
 
 ### Introduction
-A branch for me to experiment with python in order to build code to control a Rover arm with 3 DOF.
+A branch for me to experiment with python in order to build code to control a Rover arm with 3 DOF. The calculations will have to be tweaked for whatever measurements our completed arm will come out to.
 
 ### Overview 
 The completed Python application, should connect to the arm via serial and allowed the user to move the goal position of the end-effector by clicking and dragging, or by sending commands from another application running on the same computer
