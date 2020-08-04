@@ -7,7 +7,12 @@ A branch for me to experiment with python in order to build code to control a Ro
 
 ### Overview 
 The completed Python application, should connect to the arm via serial and allowed the user to move the goal position of the end-effector by clicking and dragging, or by sending commands from another application running on the same computer
-TODO: add gifs to display the DOF I'm intending 
+
+![actuator](https://user-images.githubusercontent.com/44382721/89333518-b036bf00-d65a-11ea-8554-92a171176571.gif)
+![main](https://user-images.githubusercontent.com/44382721/89333522-b0cf5580-d65a-11ea-98f3-8f970d6ea0a3.gif)
+![swing](https://user-images.githubusercontent.com/44382721/89333525-b0cf5580-d65a-11ea-9992-026ee032de70.gif)
+
+
 
 ### Tech Stack
 
